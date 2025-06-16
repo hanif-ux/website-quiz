@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tebak Kode Masuk Quizizz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    input {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #007BFF;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧠 Teka-teki Masuk Quizizz</h2>
+    <p>
+      Aku adalah gabungan dari:<br>
+      • 2 huruf pertama dari <strong>"Smart"</strong><br>
+      • Digit terakhir dari tahun kemerdekaan Indonesia<br>
+      • Huruf ke-3 dari kata <strong>"Logika"</strong><br>
+      • Jumlah huruf dari kata <strong>"Cepat"</strong>
+    </p>
+    <input type="text" id="answer" placeholder="Masukkan jawaban...">
+    <button onclick="checkAnswer()">Cek Jawaban</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.toLowerCase();
+      const correct = "sm5g5";
+      const result = document.getElementById("result");
+
+      if (input === correct) {
+        result.innerHTML = `✅ <span style="color: green;">Benar!</span><br>
+        Klik link berikut untuk masuk ke Quizizz:<br>
+        <a href="https://quizizz.com/join?gc=752762&source=liveDashboard" target="_blank">quizizz.com/join?gc=123456</a>`;
+      } else {
+        result.innerHTML = `❌ <span style="color: red;">Jawaban salah. Coba lagi!</span>`;
+      }
+    }
+  </script>
+</body>
+</html>
